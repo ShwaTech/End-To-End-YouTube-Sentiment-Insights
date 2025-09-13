@@ -42,3 +42,10 @@ stages:
     - src/model/model_evaluation.py
     outs:
     - artifacts/tracking/experiment_info.json
+  
+  model_registration:
+    cmd: python src/model/model_registeration.py
+    deps:
+    - artifacts/tracking/experiment_info.json
+    - src/model/model_registeration.py
+
