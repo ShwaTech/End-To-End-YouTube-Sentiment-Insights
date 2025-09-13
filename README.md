@@ -103,7 +103,7 @@ mlflow server -h 0.0.0.0 --default-artifact-root s3://shwa-mlflow
 
 
 #set uri in your local terminal and in your code 
-export MLFLOW_TRACKING_URI=ec2-52-90-171-209.compute-1.amazonaws.com:5000
+export MLFLOW_TRACKING_URI=ec2-54-227-97-154.compute-1.amazonaws.com:5000
 ```
 
 ## DVC Commands ->

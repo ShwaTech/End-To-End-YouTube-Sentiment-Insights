@@ -31,3 +31,14 @@ stages:
     outs:
     - artifacts/vectorizer/tfidf_vectorizer.pkl
     - artifacts/model/lgbm_model.pkl
+  
+  model_evaluation:
+    cmd: python src/model/model_evaluation.py
+    deps:
+    - artifacts/model/lgbm_model.pkl
+    - artifacts/vectorizer/tfidf_vectorizer.pkl
+    - artifacts/dataset/interim/train_processed.csv
+    - artifacts/dataset/interim/test_processed.csv
+    - src/model/model_evaluation.py
+    outs:
+    - artifacts/tracking/experiment_info.json
