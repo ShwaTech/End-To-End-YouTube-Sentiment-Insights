@@ -121,3 +121,12 @@ dvc dag
 ```bash
 https://web.postman.co/workspace/My-Workspace~dec3738d-d4c5-4633-8cd1-2766b8cddcbf/collection/31642766-a0e7066e-79aa-4648-a2a5-d89ac60e86fb?action=share&source=copy-link&creator=31642766
 ```
+
+## Chrome Pulgin
+
+1. Go to chrome://extensions/
+2. Enable Developer mode
+3. Click on Load unpacked
+4. Select the yt-chrome-plugin-frontend folder
+5. Open any youtube video and click on the extension icon
+6. You should see the comment analysis summary and sentiment analysis results
