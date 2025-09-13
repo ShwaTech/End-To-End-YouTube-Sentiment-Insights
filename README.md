@@ -115,3 +115,9 @@ dvc repro
 
 dvc dag
 ```
+
+## Postman APIs Testing ->
+
+```bash
+https://web.postman.co/workspace/My-Workspace~dec3738d-d4c5-4633-8cd1-2766b8cddcbf/collection/31642766-a0e7066e-79aa-4648-a2a5-d89ac60e86fb?action=share&source=copy-link&creator=31642766
+```
