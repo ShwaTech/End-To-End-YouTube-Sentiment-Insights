@@ -4,9 +4,46 @@ An End-To-End DL Project From Data Ingestion, Preprocessing, EDA, Baseline Model
 
 ## Project Structure
 
-```
+```bash
 End-To-End-YouTube-Sentiment-Insights
+├── .dvc
+│   ├── .gitignore
+│   └── config
+├── .github
+│   └── workflows
+│       └── cicd.yml
 ├── notebooks
+│   ├── 01_Preprocessing_&_EDA.ipynb
+│   ├── 02_Experiments_1_Baseline_Model.ipynb
+│   ├── 03_Experiments_2_BoW_&_TF-IDF.ipynb
+│   ├── 04_Experiments_3_TF-IDF_TriGram_MaxFeatures.ipynb
+│   ├── 05_Experiments_4_Handling_Imbalanced_Data.ipynb
+│   ├── 06_Experiments_5_XGBoost_With_HPT.ipynb
+│   ├── 07_Experiments_6_LightGBM_Detailed_HPT.ipynb
+│   └── 08_Stacking.ipynb
+├── src
+│   ├── __init__.py
+│   ├── data
+│   │   ├── __init__.py
+│   │   ├── data_ingestion.py
+│   │   └── data_preprocessing.py
+│   └── model
+│       ├── __init__.py
+│       ├── model_building.py
+│       ├── model_evaluation.py
+│       └── model_register.py
+├── artifacts
+├── flask_app
+│   └── app.py
+├── yt-chrome-plugin-frontend
+|   ├── popup.html
+|   ├── popup.js
+|   └── manifest.json
+├── setup.py
+├── template.py
+├── dvc.yaml
+├── params.yaml
+├── Dockerfile
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -21,7 +58,7 @@ pip install uv
 uv pip install -r requirements.txt
 ```
 
-## MLflow on AWS Setup:
+## MLflow on AWS Setup ->
 
 1. Login to AWS console.
 2. Create IAM user with AdministratorAccess
@@ -30,6 +67,7 @@ uv pip install -r requirements.txt
 5. Create EC2 machine (Ubuntu) & add Security groups 5000 port
 
 Run the following command on EC2 machine
+
 ```bash
 sudo apt update
 
@@ -66,4 +104,14 @@ mlflow server -h 0.0.0.0 --default-artifact-root s3://shwa-mlflow
 
 #set uri in your local terminal and in your code 
 export MLFLOW_TRACKING_URI=ec2-52-90-171-209.compute-1.amazonaws.com:5000
+```
+
+## DVC Commands ->
+
+```bash
+dvc init
+
+dvc repro
+
+dvc dag
 ```
