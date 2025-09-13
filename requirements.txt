@@ -16,3 +16,5 @@ seaborn
 scikit-learn
 imbalanced-learn
 optuna
+
+-e .
