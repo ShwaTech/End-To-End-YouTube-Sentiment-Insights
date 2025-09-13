@@ -130,3 +130,82 @@ https://web.postman.co/workspace/My-Workspace~dec3738d-d4c5-4633-8cd1-2766b8cddc
 4. Select the yt-chrome-plugin-frontend folder
 5. Open any youtube video and click on the extension icon
 6. You should see the comment analysis summary and sentiment analysis results
+
+## AWS-CICD-Deployment-with-Github-Actions
+
+### 1. Login to AWS console
+
+### 2. Create IAM user for deployment
+
+#### Policy
+
+ 1. AmazonEC2ContainerRegistryFullAccess
+
+ 2. AmazonEC2FullAccess
+
+#### with specific access
+
+ 1. EC2 access : It is virtual machine
+
+ 2. ECR : Elastic Container registry to save your docker image in aws
+
+#### Description: About the deployment
+
+ 1. Build docker image of the source code
+
+ 2. Push your docker image to ECR
+
+ 3. Launch Your EC2
+
+ 4. Pull Your image from ECR in EC2
+
+ 5. Lauch your docker image in EC2
+
+### 3. Create ECR repo to store/save docker image
+
+- Save the URI: 047719640457.dkr.ecr.us-east-1.amazonaws.com/yt-sentiment
+
+### 4. Create EC2 machine (Ubuntu)
+
+### 5. Open EC2 and Install docker in EC2 Machine
+
+#### Run the following commands in EC2 ->
+
+```bash
+ sudo apt-get update -y
+
+ sudo apt-get upgrade -y
+```
+
+#### Required commands to install docker in EC2 ->
+
+```bash
+ curl -fsSL https://get.docker.com -o get-docker.sh
+
+ sudo sh get-docker.sh
+
+ sudo usermod -aG docker ubuntu
+
+ newgrp docker
+```
+
+### 6. Configure EC2 as self-hosted runner
+
+ 1. Go to github > setting > actions > runner > new self-hosted runner
+ 2. Choose the os machine (Linux)
+ 3. Run the commands one by one
+ 4. Make Sure When You Run (Enter the name of runner -> self-hosted)
+
+### 7. Setup github secrets
+
+ AWS_ACCESS_KEY_ID = From >> yt-sentiment_accessKeys.csv
+
+ AWS_SECRET_ACCESS_KEY = From >> mlflow.pem
+
+ AWS_REGION = us-east-1
+
+ AWS_ECR_LOGIN_URI = demo>>  047719640457.dkr.ecr.us-east-1.amazonaws.com
+
+ ECR_REPOSITORY_NAME = yt-sentiment
+
+ git config --global user.name "ShwaTech"
