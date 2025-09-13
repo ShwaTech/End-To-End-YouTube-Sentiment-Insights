@@ -36,9 +36,9 @@ End-To-End-YouTube-Sentiment-Insights
 ├── flask_app
 │   └── app.py
 ├── yt-chrome-plugin-frontend
-|   ├── popup.html
-|   ├── popup.js
-|   └── manifest.json
+│   ├── popup.html
+│   ├── popup.js
+│   └── manifest.json
 ├── setup.py
 ├── template.py
 ├── dvc.yaml
