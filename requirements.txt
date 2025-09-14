@@ -1,5 +1,5 @@
 boto3
-awscli
+# awscli
 Flask
 Flask_Cors
 joblib
